@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  .logo {
+    width: 200px;
+  }
+  nav {
+    flex: 1;
+    padding-right: 10px;
+    a{
+      color: darkviolet;
+      padding-right: 10px;
+    }
+  }
+}

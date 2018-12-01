@@ -1,0 +1,16 @@
+1)A constructor is being called right after the creation of the component, long before data to be passed to it is ready and populated, while ngOnInit only runs after the first cycle of changes to the data, so you have access to your component inputs.
+2)it is preferable to use the constructor for constants, like things that are actually being hard-coded into your component, and ngOnInit for everything that depends on external data.
+--------------------------------------
+Angular-Core : Not dependent on anything except javascript
+Angular-View: Depends on the device
+Angular is Strict component driven framework.
+Angular module is similar to java package
+Module can have components,pipes,services etc..
+Top Label module is AppModule
+Angular identifies all the elements using decorator
+AppModule is the starting module
+Angular bootstraps from Main.ts
+RouterModule.forRoot should be only one throughout the project
+RouterModule.forChild should be used other module
+
+

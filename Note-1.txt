@@ -1,0 +1,22 @@
+
+npm install -g @angular/cli@latest
+ng new volvo_cart
+
+-------Module------
+ng g m product
+ng g m cart
+
+
+-----Components-------------------
+ng g c product/components/productlist
+ng g c product/components/productListItem
+ng g c product/components/productDetails
+ng g c product/components/recentlyViewed
+ng g c product/components/cart
+ng g c product/components/miniCart
+ng g c product/components/productDetails
+
+------Service-------------------------
+ng g s product/product
+ng g s cart/cart
+

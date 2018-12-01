@@ -1,0 +1,12 @@
+header {
+  display: flex; }
+  header .logo {
+    width: 200px; }
+  header nav {
+    flex: 1;
+    padding-right: 10px; }
+    header nav a {
+      color: darkviolet;
+      padding-right: 10px; }
+
+/*# sourceMappingURL=app.component.css.map */
