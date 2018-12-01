@@ -1,3 +1,8 @@
-<p>
-  product-list-item works!
-</p>
+<div>
+  <h5>{{product.name}}</h5>
+  <p>{{product.description}}</p>
+  <p>
+    <img height="100" width="100" [src]="product.imageUrl" [alt]="product.name">
+  </p>
+  <p>{{product.price}}</p>
+</div>

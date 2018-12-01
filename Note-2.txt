@@ -16,3 +16,6 @@ RouterModule.forChild should be used other module
 npm install bootstrap --save
 npm install bootstrap --save --dev (for dev environment)
 
+Data flows down(Parent to child)-- this can be done using @input() decorator in child
+Event flows up(child to parent)-- This can be done using callback function. Pass the call back function to child
+

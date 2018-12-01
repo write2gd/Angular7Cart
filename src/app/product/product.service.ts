@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {IProduct} from '../models/Product';
 
+/*This is to inject the service instace*/
 @Injectable({
   providedIn: 'root'
 })

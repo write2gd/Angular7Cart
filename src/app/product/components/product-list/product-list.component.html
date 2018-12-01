@@ -1,9 +1,7 @@
-<p>
-  product-list works!
-</p>
+<div class="row">
+
 <!--async pipe is given to tell populate data when data is available for the observable-->
-<div *ngFor="let p of products$ | async">
-  {{p.name}}
+<!--[product] will be supplied to product list item componet input-->
+  <app-product-list-item class="col-3" [product]="p" *ngFor="let p of products$ | async"></app-product-list-item>
 
 </div>
-
