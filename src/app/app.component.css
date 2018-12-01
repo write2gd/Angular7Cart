@@ -1,9 +1,10 @@
 header nav {
+  color: snow;
+  font-weight: bold;
   padding-left: 120px; }
   header nav a {
-    color: azure;
     font-size: larger;
-    font-weight: bold;
-    padding-right: 29px; }
+    padding-right: 29px;
+    color: snow; }
 
 /*# sourceMappingURL=app.component.css.map */

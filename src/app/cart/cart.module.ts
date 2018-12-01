@@ -7,6 +7,9 @@ import {MiniCartComponent} from './mini-cart/mini-cart.component';
   declarations: [CartComponent, MiniCartComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    MiniCartComponent
   ]
 })
 export class CartModule {
