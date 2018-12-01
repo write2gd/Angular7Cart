@@ -32,3 +32,12 @@ Redux Store elements:
       Action->Actions are information or events happened in view
       Views->User Interface/UI components
 NgRx is most used redux implementation in angular using RxJx
+
+SetUps:
+npm install @ngrx/schematics --save-dev
+npm install @ngrx/store --save
+npm install @ngrx/effects --save
+npm install @ngrx/entity --save
+npm install @ngrx/store-devtools --save
+ng generate @ngrx/schematics:store State --root --module app.module.ts
+
