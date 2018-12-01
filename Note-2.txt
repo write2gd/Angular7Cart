@@ -19,4 +19,16 @@ npm install bootstrap --save --dev (for dev environment)
 Data flows down(Parent to child)-- this can be done using @input() decorator in child
 Event flows up(child to parent)-- This can be done using callback function. Pass the call back function to child
 Subject is used for both publish and subscribe
-
+-----------------------------
+Redux is a pattern which deals about storing data and current state of the application
+Redux works with component based architecture
+View->Action->Reducer
+View->Reducer (Store dispatches the actions from view to reducers)
+Reducer->View(Store selects the modifications from Reducer and applies to view)
+Redux Store elements:
+      Reducer->These are the functions which modifies data/state
+      ex-  reduce(existingState,Action) and returns new state
+            You should create a copy of the state and apply changes
+      Action->Actions are information or events happened in view
+      Views->User Interface/UI components
+NgRx is most used redux implementation in angular using RxJx
