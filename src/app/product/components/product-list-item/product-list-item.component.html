@@ -5,4 +5,6 @@
     <img height="100" width="100" [src]="product.imageUrl" [alt]="product.name">
   </p>
   <p>{{product.price}}</p>
+  <!--[] is applied to make the element dynamic-->
+  <a [routerLink]="['/products',product.id]">View Details</a>
 </div>

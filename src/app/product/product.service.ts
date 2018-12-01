@@ -15,4 +15,8 @@ export class ProductService {
   public getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>('http://5c02031dd526f90013472303.mockapi.io/products');
   }
+
+  public getProductById(productId: string): Observable<IProduct> {
+    return this.http.get<IProduct>('http://5c02031dd526f90013472303.mockapi.io/products/' + productId);
+  }
 }

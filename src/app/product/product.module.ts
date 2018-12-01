@@ -11,6 +11,11 @@ const routes: Routes = [
   {
     path: '',
     component: ProductListComponent
+  },
+  /*path is dynamic id there is a colcon*/
+  {
+    path: ':productId',
+    component: ProductDetailsComponent
   }
 ];
 
