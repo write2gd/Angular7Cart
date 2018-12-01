@@ -1,13 +1,11 @@
 header {
-  display: flex;
-  .logo {
-    width: 200px;
-  }
   nav {
     flex: 1;
     padding-right: 10px;
     a{
-      color: darkviolet;
+      color: azure;
+      font-size: larger;
+      font-weight: bold;
       padding-right: 10px;
     }
   }

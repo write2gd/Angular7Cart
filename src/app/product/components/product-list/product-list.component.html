@@ -1,8 +1,9 @@
 <p>
   product-list works!
 </p>
-<div *ngFor="let p of products">
-  {{p.imageUrl}}
+<!--async pipe is given to tell populate data when data is available for the observable-->
+<div *ngFor="let p of products$ | async">
+  {{p.name}}
 
 </div>
 

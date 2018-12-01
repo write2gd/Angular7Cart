@@ -12,5 +12,7 @@ AppModule is the starting module
 Angular bootstraps from Main.ts
 RouterModule.forRoot should be only one throughout the project
 RouterModule.forChild should be used other module
-
+--------------------------
+npm install bootstrap --save
+npm install bootstrap --save --dev (for dev environment)
 
