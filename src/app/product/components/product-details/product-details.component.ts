@@ -3,6 +3,7 @@ import {ProductService} from '../../product.service';
 import {IProduct} from '../../../models/Product';
 import {Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
+import {CartService} from '../../../cart/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -12,7 +13,7 @@ import {ActivatedRoute} from '@angular/router';
 export class ProductDetailsComponent implements OnInit {
   productDetails: IProduct;
 
-  constructor(private aRoute: ActivatedRoute, private productService: ProductService) {
+  constructor(private aRoute: ActivatedRoute, private productService: ProductService, private cartService: CartService) {
   }
 
   ngOnInit() {
@@ -20,7 +21,11 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.getProductById(productId).subscribe((product: IProduct) => {
       this.productDetails = product;
     });
+  }
 
+  addToCart() {
+    this.cartService.addToCart(this.productDetails);
+    alert('Added');
   }
 
 }

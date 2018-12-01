@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CartService} from '../cart.service';
 
 @Component({
   selector: 'app-mini-cart',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mini-cart.component.scss']
 })
 export class MiniCartComponent implements OnInit {
+  count: number;
 
-  constructor() { }
+  constructor(private cartService: CartService) {
+  }
 
   ngOnInit() {
+    this.count = this.cartService.getCart().length;
   }
 
 }

@@ -1,3 +1,18 @@
-<p>
-  cart works!
-</p>
+<div class="cart">
+  <div class="row">
+    <div class="col">
+      <h3>Cart Details</h3>
+    </div>
+  </div>
+  <div *ngIf="carts.length > 0">
+    <div *ngFor="let cart of carts" class="col">
+      <div class="col-3">
+        Name: {{cart.product.name}}
+      </div>
+      <div class="col-3">
+        Quantity: {{cart.quantity}}
+      </div>
+
+    </div>
+  </div>
+</div>
