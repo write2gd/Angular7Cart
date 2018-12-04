@@ -40,4 +40,5 @@ npm install @ngrx/effects --save
 npm install @ngrx/entity --save
 npm install @ngrx/store-devtools --save
 ng generate @ngrx/schematics:store State --root --module app.module.ts
+ng generate @ngrx/schematics:reducer product/Product  --module product/product.module.ts
 

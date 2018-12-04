@@ -6,6 +6,8 @@ import {ProductDetailsComponent} from './components/product-details/product-deta
 import {RecentlyViewedComponent} from './components/recently-viewed/recently-viewed.component';
 import {Routes, RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import * as fromProduct from './product.reducer';
 
 const routes: Routes = [
   {
@@ -24,7 +26,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     HttpClientModule, /*require for http api call*/
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes), StoreModule.forFeature('product', fromProduct.reducer)
   ]
 })
 export class ProductModule {

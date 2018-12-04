@@ -1,0 +1,15 @@
+To Learn:
+MergeMap:It will not flat but work on all observable
+SwitchMap:It will flat the observable and works with latest observable
+
+
+Angular:
+directives
+@output
+hostlistener
+hostfinding
+advance routing
+service
+resolver
+custom element
+routing guard
