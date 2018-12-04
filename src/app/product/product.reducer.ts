@@ -15,6 +15,7 @@ export function reducer(state = initialState, action: ProductActions): ProductSt
   switch (action.type) {
     case ProductActionTypes.LoadProducts:
       return {
+        /* this ... operatoe is used to create a new instance*/
         ...state, loading: true
       };
     case ProductActionTypes.LoadProductsFailed:

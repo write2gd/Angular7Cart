@@ -6,15 +6,17 @@ import {ProductDetailsComponent} from './components/product-details/product-deta
 import {RecentlyViewedComponent} from './components/recently-viewed/recently-viewed.component';
 import {Routes, RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
+import {StoreModule} from '@ngrx/store';
 import * as fromProduct from './product.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {ProductEffects} from './product.effects';
 
 const routes: Routes = [
   {
     path: '',
     component: ProductListComponent
   },
-  /*path is dynamic id there is a colcon*/
+  /*path is dynamic id there is a colon*/
   {
     path: ':productId',
     component: ProductDetailsComponent
@@ -26,7 +28,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     HttpClientModule, /*require for http api call*/
-    RouterModule.forChild(routes), StoreModule.forFeature('product', fromProduct.reducer)
+    RouterModule.forChild(routes), StoreModule.forFeature('productStore', fromProduct.reducer), EffectsModule.forFeature([ProductEffects])
   ]
 })
 export class ProductModule {

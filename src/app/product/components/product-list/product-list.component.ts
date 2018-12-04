@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../product.service';
-import {IProduct} from '../../../models/Product';
 import {Observable} from 'rxjs';
 import {ProductState} from '../../product.reducer';
-import {Store} from '@ngrx/store';
+import {Store, select} from '@ngrx/store';
+import {IProduct} from 'models/Product';
 
 @Component({
   selector: 'app-product-list',
@@ -21,7 +21,8 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     /*this type is not for modifying the data*/
     this.productService.getProducts();
-
+    /* productStore is same name which was registered as afeature in product module*/
+    this.products$ = this.store.pipe(select((state: any) => state.productStore.list));
   }
 
 }
