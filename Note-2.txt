@@ -47,4 +47,4 @@ ng generate @ngrx/schematics:effect product/Product  --module product/product.mo
 Effects are used to handle side effects.
 Effects are decorator
 Effects run asynchronously with respect to Store
-
+Selectors are used to avoid repetition od codes in components and data massaging from different reducers

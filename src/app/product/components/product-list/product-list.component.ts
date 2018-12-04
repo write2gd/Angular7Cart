@@ -5,6 +5,7 @@ import {ProductState} from '../../product.reducer';
 import {Store, select} from '@ngrx/store';
 import {IProduct} from 'models/Product';
 import {LoadProducts} from '../../product.actions';
+import {getAllProducts} from '../../product.selector';
 
 @Component({
   selector: 'app-product-list',
@@ -22,7 +23,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new LoadProducts());
     /* productStore is same name which was registered as afeature in product module*/
-    this.products$ = this.store.pipe(select((state: any) => state.productStore.list));
+    this.products$ = this.store.pipe(select(getAllProducts));
   }
 
 }
