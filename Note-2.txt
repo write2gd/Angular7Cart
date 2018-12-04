@@ -44,5 +44,7 @@ ng generate @ngrx/schematics:reducer product/Product  --module product/product.m
 ng generate @ngrx/schematics:action product/Product  --module product/product.module.ts
 ng generate @ngrx/schematics:effect product/Product  --module product/product.module.ts
 
-Affects are used to handle side effects
+Effects are used to handle side effects.
+Effects are decorator
+Effects run asynchronously with respect to Store
 

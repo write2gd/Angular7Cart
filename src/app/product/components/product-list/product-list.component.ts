@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {ProductState} from '../../product.reducer';
 import {Store, select} from '@ngrx/store';
 import {IProduct} from 'models/Product';
+import {LoadProducts} from '../../product.actions';
 
 @Component({
   selector: 'app-product-list',
@@ -19,8 +20,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this type is not for modifying the data*/
-    this.productService.getProducts();
+    this.store.dispatch(new LoadProducts());
     /* productStore is same name which was registered as afeature in product module*/
     this.products$ = this.store.pipe(select((state: any) => state.productStore.list));
   }
