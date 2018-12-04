@@ -1,6 +1,5 @@
-import {Action} from '@ngrx/store';
 import {IProduct} from 'models/Product';
-
+import {ProductActions, ProductActionTypes} from './product.actions';
 
 export interface State {
   list: IProduct[];
@@ -12,8 +11,20 @@ export const initialState: State = {
   loading: false
 };
 
-export function reducer(state = initialState, action: Action): State {
+export function reducer(state = initialState, action: ProductActions): State {
   switch (action.type) {
+    case ProductActionTypes.LoadProducts:
+      return {
+        ...state, loading: true
+      };
+    case ProductActionTypes.LoadProductsFailed:
+      return {
+        ...state, loading: false
+      };
+    case ProductActionTypes.LoadProductsCompleted:
+      return {
+        ...state, loading: false, list: action.payLoad
+      };
 
     default:
       return state;
