@@ -1,17 +1,17 @@
 import {IProduct} from 'models/Product';
 import {ProductActions, ProductActionTypes} from './product.actions';
 
-export interface State {
+export interface ProductState {
   list: IProduct[];
   loading: boolean;
 }
 
-export const initialState: State = {
+export const initialState: ProductState = {
   list: [],
   loading: false
 };
 
-export function reducer(state = initialState, action: ProductActions): State {
+export function reducer(state = initialState, action: ProductActions): ProductState {
   switch (action.type) {
     case ProductActionTypes.LoadProducts:
       return {
