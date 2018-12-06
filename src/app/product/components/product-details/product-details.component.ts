@@ -3,7 +3,9 @@ import {ProductService} from '../../product.service';
 import {IProduct} from '../../../models/Product';
 import {Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
-import {CartService} from '../../../cart/cart.service';
+import {Store} from '@ngrx/store';
+import {AddToCartCarts, CartActionTypes} from '../../../cart/cart.actions';
+import {ICartItem} from 'models/cartItem';
 
 @Component({
   selector: 'app-product-details',
@@ -13,7 +15,7 @@ import {CartService} from '../../../cart/cart.service';
 export class ProductDetailsComponent implements OnInit {
   productDetails: IProduct;
 
-  constructor(private aRoute: ActivatedRoute, private productService: ProductService, private cartService: CartService) {
+  constructor(private aRoute: ActivatedRoute, private productService: ProductService, private cartStore: Store<any>) {
   }
 
   ngOnInit() {
@@ -24,8 +26,11 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addToCart() {
-    this.cartService.addToCart(this.productDetails);
-    alert('Added');
+    const detailsToAdd: ICartItem = {
+      productId: this.productDetails.id,
+      quantity: 1
+    };
+    this.cartStore.dispatch(new AddToCartCarts(detailsToAdd));
   }
 
 }

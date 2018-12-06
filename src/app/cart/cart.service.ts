@@ -14,7 +14,6 @@ export class CartService {
   }
 
   public addToCart(product: IProduct, quantity: number = 1) {
-    this.cart.push({product, quantity});
     this.onCartUpdate.next(this.cart);
   }
 
