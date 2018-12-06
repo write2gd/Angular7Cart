@@ -9,7 +9,8 @@ const getCartList = createSelector(getCartState, (cart: CartState) => cart.list)
 export const getAllCartItems = createSelector(getCartList, getAllProducts, (cartList: ICartItem[], products: IProduct[]) => {
   return cartList.map((cart: ICartItem) => {
     const productDetails = products.find((product: IProduct) => product.id === cart.productId);
-    return {...cart, details: productDetails};
+    return {...cart, product: productDetails};
   });
 });
+export const getItemCounter = createSelector(getCartList, (cartList: ICartItem[]) => cartList.length);
 

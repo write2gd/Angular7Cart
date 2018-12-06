@@ -5,7 +5,7 @@ import {IProduct} from 'models/Product';
 const getProductState = createFeatureSelector<ProductState>('productStore');
 const getTitle = (state) => state.common.title;
 export const getAllProducts = createSelector(
-  getProductState, (product: ProductState) => product.list
+  getProductState, (product: ProductState) => product ? product.list : []
 );
 export const getExtraProducts = createSelector(
   getAllProducts, (products: IProduct[]) => {

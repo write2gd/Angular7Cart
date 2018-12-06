@@ -23,8 +23,8 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new LoadProducts());
     /* productStore is same name which was registered as afeature in product module*/
-   // this.products$ = this.store.pipe(select(getAllProducts));
-    this.products$ = this.store.pipe(select(getExtraProducts));
+    this.products$ = this.store.pipe(select(getAllProducts));
+    /*this.products$ = this.store.pipe(select(getExtraProducts));*/
   }
 
 }
