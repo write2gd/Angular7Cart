@@ -3,9 +3,13 @@ import {ProductService} from '../../product.service';
 import {IProduct} from '../../../models/Product';
 import {Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 import {AddToCartCarts, CartActionTypes} from '../../../cart/cart.actions';
 import {ICartItem} from 'models/cartItem';
+import {LoadProducts} from '../product-list/product-list.actions';
+import {getAllProducts} from '../product-list/product-list.selector';
+import {GetProduct} from './product-details.actions';
+import {getProduct} from './product-details.selector';
 
 @Component({
   selector: 'app-product-details',
@@ -15,13 +19,14 @@ import {ICartItem} from 'models/cartItem';
 export class ProductDetailsComponent implements OnInit {
   productDetails: IProduct;
 
-  constructor(private aRoute: ActivatedRoute, private productService: ProductService, private cartStore: Store<any>) {
+  constructor(private aRoute: ActivatedRoute, private productService: ProductService, private store: Store<any>) {
   }
 
   ngOnInit() {
-    const productId = this.aRoute.snapshot.paramMap.get('productId');
-    this.productService.getProductById(productId).subscribe((product: IProduct) => {
-      this.productDetails = product;
+    this.store.dispatch(new GetProduct());
+    this.store.pipe(select(getProduct)).subscribe((p: IProduct) => {
+      console.log('Product from Component' + JSON.stringify(p));
+      this.productDetails = p;
     });
   }
 
@@ -30,7 +35,7 @@ export class ProductDetailsComponent implements OnInit {
       productId: this.productDetails.id,
       quantity: 1
     };
-    this.cartStore.dispatch(new AddToCartCarts(detailsToAdd));
+    this.store.dispatch(new AddToCartCarts(detailsToAdd));
   }
 
 }
