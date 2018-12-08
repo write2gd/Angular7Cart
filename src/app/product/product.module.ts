@@ -7,9 +7,9 @@ import {RecentlyViewedComponent} from './components/recently-viewed/recently-vie
 import {Routes, RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {StoreModule} from '@ngrx/store';
-import * as fromProduct from './product-list.reducer';
+import * as fromProduct from './components/product-list/product-list.reducer';
 import {EffectsModule} from '@ngrx/effects';
-import {ProductListEffects} from './product-list.effects';
+import {ProductListEffects} from './components/product-list/product-list.effects';
 
 const routes: Routes = [
   {

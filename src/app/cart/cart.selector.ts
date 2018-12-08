@@ -1,6 +1,6 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 import {CartState} from './cart.reducer';
-import {getAllProducts} from '../product/product-list.selector';
+import {getAllProducts} from '../product/components/product-list/product-list.selector';
 import {IProduct} from 'models/Product';
 import {ICartItem} from 'models/cartItem';
 

@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../product.service';
 import {Observable} from 'rxjs';
-import {ProductState} from '../../product-list.reducer';
+import {ProductState} from './product-list.reducer';
 import {Store, select} from '@ngrx/store';
 import {IProduct} from 'models/Product';
-import {LoadProducts} from '../../product-list.actions';
-import {getAllProducts} from '../../product-list.selector';
+import {LoadProducts} from './product-list.actions';
+import {getAllProducts} from './product-list.selector';
 
 @Component({
   selector: 'app-product-list',
