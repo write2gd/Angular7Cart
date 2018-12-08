@@ -2,21 +2,21 @@ import { TestBed, inject } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 
-import { ProductEffects } from './product.effects';
+import { ProductListEffects } from './product-list.effects';
 
-describe('ProductEffects', () => {
+describe('ProductListEffects', () => {
   let actions$: Observable<any>;
-  let effects: ProductEffects;
+  let effects: ProductListEffects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        ProductEffects,
+        ProductListEffects,
         provideMockActions(() => actions$)
       ]
     });
 
-    effects = TestBed.get(ProductEffects);
+    effects = TestBed.get(ProductListEffects);
   });
 
   it('should be created', () => {

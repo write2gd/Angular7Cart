@@ -7,9 +7,9 @@ import {RecentlyViewedComponent} from './components/recently-viewed/recently-vie
 import {Routes, RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {StoreModule} from '@ngrx/store';
-import * as fromProduct from './product.reducer';
+import * as fromProduct from './product-list.reducer';
 import {EffectsModule} from '@ngrx/effects';
-import {ProductEffects} from './product.effects';
+import {ProductListEffects} from './product-list.effects';
 
 const routes: Routes = [
   {
@@ -28,7 +28,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     HttpClientModule, /*require for http api call*/
-    RouterModule.forChild(routes), StoreModule.forFeature('productStore', fromProduct.reducer), EffectsModule.forFeature([ProductEffects])
+    RouterModule.forChild(routes), StoreModule.forFeature('productStore', fromProduct.reducer), EffectsModule.forFeature([ProductListEffects])
   ]
 })
 export class ProductModule {

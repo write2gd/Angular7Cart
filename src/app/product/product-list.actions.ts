@@ -23,4 +23,4 @@ export class LoadProductsFailed implements Action {
 
 }
 
-export type ProductActions = LoadProducts | LoadProductsCompleted | LoadProductsFailed;
+export type ProductListActions = LoadProducts | LoadProductsCompleted | LoadProductsFailed;

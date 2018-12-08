@@ -1,5 +1,5 @@
 import {IProduct} from 'models/Product';
-import {ProductActions, ProductActionTypes} from './product.actions';
+import {ProductActionTypes, ProductListActions} from './product-list.actions';
 
 export interface ProductState {
   list: IProduct[];
@@ -11,7 +11,7 @@ export const initialState: ProductState = {
   loading: false
 };
 
-export function reducer(state = initialState, action: ProductActions): ProductState {
+export function reducer(state = initialState, action: ProductListActions): ProductState {
   switch (action.type) {
     case ProductActionTypes.LoadProducts:
       return {
