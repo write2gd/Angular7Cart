@@ -1,15 +1,38 @@
 To Learn:
 MergeMap:It will not flat but work on all observable
 SwitchMap:It will flat the observable and works with latest observable
-
+Angular Lifecycle hooks
+ChangeDetection Strategy: used to improve performance for dumb components
 
 Angular:
 directives
-@output
-hostlistener
-hostfinding
+@output: it uses a callback function/event emitter to pass data from child to parent
+@Input:used to pass data from parent to child
+HostListener
+HostBinding
 advance routing
 service
-resolver
 custom element
-routing guard
+Interceptor:
+routing guard: To put special condition to the route
+Routing Details:
+canDeactivate: this will tell the deactivate method in the provided classes should return true
+canActivate:This will tell the activate method in the provided classes should return true
+resolver:used to load the component only when all the data is available
+data can be passed inside the route
+-------------
+Directive
+transclude
+
+------------------
+@HostListener: method attached to this will executed based on the event or host is clicked.
+@HostBinding: This can change any property attached to host element.
+this can be used to listen any event from any outside components.
+@Pipe : is used to create custom pipe to format
+@viewchild is used to get all public  from tag element to the component
+
+=================
+karma : it is test running tool
+jasmine,mocha are popular test framework in angular
+all browser has two engine : js engine and render engine
+headless browser has only js engine without having renderer engine

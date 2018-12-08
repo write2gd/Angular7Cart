@@ -5,7 +5,7 @@ import {ProductState} from '../../product.reducer';
 import {Store, select} from '@ngrx/store';
 import {IProduct} from 'models/Product';
 import {LoadProducts} from '../../product.actions';
-import {getAllProducts, getExtraProducts} from '../../product.selector';
+import {getAllProducts} from '../../product.selector';
 
 @Component({
   selector: 'app-product-list',

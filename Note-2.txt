@@ -52,3 +52,10 @@ Selectors are used to avoid repetition od codes in components and data massaging
 
 ng generate @ngrx/schematics:reducer cart/Cart  --module cart/cart.module.ts
 ng generate @ngrx/schematics:action cart/Cart  --module cart/cart.module.ts
+
+Router store is to store the router information
+npm install @ngrx/router-store --save
+
+-----------------
+
+
