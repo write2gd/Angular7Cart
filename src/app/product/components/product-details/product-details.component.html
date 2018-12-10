@@ -1,9 +1,9 @@
-<div class="col" *ngIf="productDetails">
-  <h5>{{productDetails.name}}</h5>
-  <p>Price : {{productDetails.price}}</p>
-  <p>Category : {{productDetails.category}}</p>
+<div class="col" *ngIf="product">
+  <h5>Product Name: {{product.name}}</h5>
+  <p>Price : {{product.price}}</p>
+  <p>Category : {{product.category}}</p>
   <p>
-    <img [src]="productDetails.imageUrl" height="229px" width="229px" [alt]="productDetails.name">
+    <img [src]="product.imageUrl" height="229px" width="229px" [alt]="product.name">
   </p>
   <button (click)="addToCart()">Add to Cart</button>
 </div>

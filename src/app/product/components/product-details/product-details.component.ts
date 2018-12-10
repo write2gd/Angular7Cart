@@ -17,7 +17,7 @@ import {getProduct} from './product-details.selector';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  productDetails: IProduct;
+  product: IProduct;
 
   constructor(private aRoute: ActivatedRoute, private productService: ProductService, private store: Store<any>) {
   }
@@ -25,14 +25,13 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new GetProduct());
     this.store.pipe(select(getProduct)).subscribe((p: IProduct) => {
-      console.log('Product from Component' + JSON.stringify(p));
-      this.productDetails = p;
+      this.product = p;
     });
   }
 
   addToCart() {
     const detailsToAdd: ICartItem = {
-      productId: this.productDetails.id,
+      productId: this.product.id,
       quantity: 1
     };
     this.store.dispatch(new AddToCartCarts(detailsToAdd));

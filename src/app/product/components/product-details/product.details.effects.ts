@@ -22,6 +22,6 @@ export class ProductDetailEffects {
     switchMap(() => this.store.pipe(select(getProductId))),
     switchMap((productId) => this.productService.getProductById(productId)),
     map((product: IProduct) => new GetProductCompleted(product)),
-    catchError(() => of(new GetProductFailed())));
+    catchError(() => of(new GetProductFailed('Failed'))));
 
 }

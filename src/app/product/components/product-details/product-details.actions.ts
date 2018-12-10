@@ -15,11 +15,16 @@ export class GetProductCompleted implements Action {
   readonly type = ProductDetailActionTypes.LoadIDProductDetailCompleted;
 
   constructor(public  payLoad: IProduct) {
+    console.log(' Products Loading Success' + payLoad);
   }
 }
 
 export class GetProductFailed implements Action {
   readonly type = ProductDetailActionTypes.LoadIDProductDetailFailed;
+
+  constructor(public error: string) {
+    console.log(' Products Loading Failed' + error);
+  }
 
 }
 
